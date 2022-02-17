@@ -1,5 +1,6 @@
 import random
 
+#Визначає початкові налаштування генерації масиву та сортування
 def inputConfig():
     size=input("Input array size: ")
     while not size.isdigit() or int(size)<=0:
@@ -19,19 +20,21 @@ def inputConfig():
     
     return size, sort, gen
     
-
-
+#Повертає відсортований масив
 def increaseArray(size):
     return list(range(1, size+1))
 
+#Повертає обернено відсортований масив
 def decreaseArray(size):
     temp=list(range(1, size+1))
     temp.reverse()
     return temp
 
+#Повертає випадково відсортований масив
 def randomArray(size):
     return random.sample(range(1, size+1), size)
 
+#Виводить перші 10 елементів масиву
 def printArray(arr, size):
     if size>=10:
         for i in range(10):
@@ -40,6 +43,7 @@ def printArray(arr, size):
         for i in range(size):
             print(arr[i], " ", end="")
 
+#Сортування бульбашкою
 def bubbleSort(arr, size):
     compares=0
     swaps=0
@@ -54,6 +58,7 @@ def bubbleSort(arr, size):
                 swapped = True
     return compares, swaps
 
+#Сортування гребінцем
 def combSort(arr, size):
     compares=0
     swaps=0
